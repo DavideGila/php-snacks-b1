@@ -1,3 +1,5 @@
+<!-- Snack 1 -->
+
 <?php 
 $matches = [
     [
@@ -35,9 +37,11 @@ $matches = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP Snacks</title>
 </head>
 <body>
-    
+    <?php foreach ($matches as $match) {
+        echo "<div> {$match['teamHome']} - {$match['teamAway']} | {$match['scoreHome']} - {$match['scoreAway']} </div>";
+    } ?>      
 </body>
 </html>
