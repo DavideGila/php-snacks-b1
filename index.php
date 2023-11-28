@@ -1,6 +1,6 @@
-<!-- Snack 1 -->
 
 <?php 
+// Snack-1
 $matches = [
     [
         'teamHome' => 'Olimpia Milano',
@@ -26,8 +26,14 @@ $matches = [
         'scoreHome' => '58',
         'scoreAway' => '46',        
     ]
-]
+];
 
+// Snack-2
+if (isset($_GET["name"]) && isset($_GET["email"]) && isset($_GET["age"])){
+    $name = $_GET["name"];
+    $email = $_GET["email"];
+    $age = $_GET["age"];
+}
 ?>
 
 
@@ -40,8 +46,27 @@ $matches = [
     <title>PHP Snacks</title>
 </head>
 <body>
+    <!-- Snack 1 -->
     <?php foreach ($matches as $match) {
         echo "<div> {$match['teamHome']} - {$match['teamAway']} | {$match['scoreHome']} - {$match['scoreAway']} </div>";
-    } ?>      
+    } ?>  
+    
+    <!-- Snack 2 -->
+    <form action="index.php" method="GET">
+        <input type="text" name='name'>
+        <input type="text" name='email'>
+        <input type="text" name='age'>
+        <button type='submit'>Invia</button>
+    </form>
+
+    <?php 
+        if (!empty($name) && !empty($email) && !empty($age)) {
+            if (strlen($name) > 3 && strpos($email, '.' ) && strpos($email, '@') && is_numeric($age)){
+            echo "<div> Accesso riuscito </div>";
+            } else {
+                echo "<div> Accesso Negato</div>";
+            }
+    }
+    ?> 
 </body>
 </html>
