@@ -33,7 +33,12 @@ if (isset($_GET["name"]) && isset($_GET["email"]) && isset($_GET["age"])){
     $name = $_GET["name"];
     $email = $_GET["email"];
     $age = $_GET["age"];
-}
+};
+
+// Snack-bonus
+$longSentence = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio laudantium qui, itaque, tenetur recusandae earum temporibus quos a corrupti minima aliquam velit sint eius! Velit officia incidunt nostrum delectus vero repellat fugit aspernatur laboriosam eos dolore ipsum aperiam maiores officiis, maxime quod porro sunt. Earum culpa aspernatur nobis, atque odio excepturi cupiditate necessitatibus vel aut magni dolorem obcaecati quis quaerat minima, veniam reiciendis quidem recusandae dolore sequi facere. Quisquam, cum.";
+
+$paragraph = explode(".", $longSentence);
 ?>
 
 
@@ -67,6 +72,13 @@ if (isset($_GET["name"]) && isset($_GET["email"]) && isset($_GET["age"])){
                 echo "<div> Accesso Negato</div>";
             }
     }
-    ?> 
+    ?>
+
+    <!-- Snack-bonus -->
+    <?php  
+        foreach ($paragraph as $smallSentence) {
+            echo "<p> $smallSentence </p>";
+        }
+    ?>
 </body>
 </html>
